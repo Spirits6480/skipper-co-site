@@ -1,0 +1,134 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://skipper-co.com/#org",
+            "name": "Skipper & Co.",
+            "url": "https://skipper-co.com/",
+            "email": "gerhard@skipper-co.com",
+            "logo": "https://skipper-co.com/images/brand/favicon-192.png",
+            "description": "B2B sales funnel and pipeline audits. Skipper & Co. finds where a business loses revenue between lead and close, quantifies each gap, and hands over a prioritised action plan.",
+            "founder": {
+                "@id": "https://skipper-co.com/#gerhard"
+            },
+            "areaServed": {
+                "@type": "Country",
+                "name": "South Africa"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Cape Town",
+                "addressCountry": "ZA"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/skipperandco"
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://skipper-co.com/#gerhard",
+            "name": "Gerhard Scheepers",
+            "jobTitle": "Sales Systems Consultant",
+            "worksFor": {
+                "@id": "https://skipper-co.com/#org"
+            },
+            "knowsAbout": [
+                "B2B sales",
+                "Sales pipeline management",
+                "Revenue operations",
+                "Industrial automation"
+            ],
+            "image": "https://skipper-co.com/images/gerhard-scheepers-profile.jpg",
+            "sameAs": [
+                "https://www.linkedin.com/company/skipperandco"
+            ]
+        },
+        {
+            "@type": "Service",
+            "@id": "https://skipper-co.com/#audit",
+            "name": "B2B Sales Funnel Audit",
+            "serviceType": "Sales funnel audit",
+            "provider": {
+                "@id": "https://skipper-co.com/#org"
+            },
+            "areaServed": {
+                "@type": "Country",
+                "name": "South Africa"
+            },
+            "description": "A structured audit across six areas of a sales operation — prospect simulation, website and lead data, CRM and pipeline, revenue metrics, rep and process assessment, and a scored gap analysis with an action plan.",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Sales audit",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Prospect simulation"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Website & lead data audit"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "CRM & pipeline review"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Revenue metrics calculation"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Rep & process assessment"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Gap analysis & action plan"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "Review",
+            "itemReviewed": {
+                "@id": "https://skipper-co.com/#org"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Alet Byers"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Absolute Ablutions"
+            },
+            "reviewBody": "Skipper & Co has changed the way we work at Absolute Ablutions for the better for ever. The changes were simple, yet incredibly effective with results in real monetary value. Gerhard’s energy and passion for the work, combined with stellar work ethic, inspires staff to approach their work with new enthusiasm. He teaches with respect and gentleness, ensuring buy in from even the most senior staff."
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://skipper-co.com/#website",
+            "url": "https://skipper-co.com/",
+            "name": "Skipper & Co.",
+            "publisher": {
+                "@id": "https://skipper-co.com/#org"
+            }
+        }
+    ]
+}
