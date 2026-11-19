@@ -63,6 +63,21 @@ const steps = [
   },
 ];
 
+const services = [
+  {
+    title: "Sales funnel audits",
+    body: "A structured review of how leads arrive, how fast they are answered, how they are followed up and where deals die, with each gap priced in rand.",
+  },
+  {
+    title: "CRM and sales automation",
+    body: "Setting up and fixing HubSpot, GoHighLevel and Make so follow-up, pipelines and reporting run on their own.",
+  },
+  {
+    title: "Conversion and tracking",
+    body: "Landing-page conversion work, Google Analytics 4 and Google Tag Manager tracking, and Google Ads, so you know what each lead and each sale actually costs.",
+  },
+];
+
 const deliverables = [
   "Revenue Metrics Report",
   "Written Findings (10–15 pages)",
@@ -284,6 +299,34 @@ export function HomePage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section id="services" className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Services
+          </h2>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-muted">
+            Skipper & Co provides B2B sales-funnel audits, CRM and
+            sales-automation consulting (including HubSpot, GoHighLevel and
+            Make), conversion-rate optimisation, analytics and tracking setup,
+            and Google Ads management. The scope, deliverables, fees and
+            timelines of each engagement are set out in the Proposal.
+          </p>
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-2xl border border-line bg-surface p-6"
+              >
+                <h3 className="text-xl font-semibold tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="mt-4 leading-7 text-muted">{service.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

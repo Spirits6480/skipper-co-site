@@ -44,15 +44,15 @@ Slugs match the public WordPress URLs. `trailingSlash: true` redirects `/about` 
 
 | Live URL | Route | Notes |
 | --- | --- | --- |
-| https://skipper-co.com/ | `/` | Homepage copy, case study, guarantees, HubSpot meetings embed |
+| https://skipper-co.com/ | `/` | Homepage copy, services, case study, guarantees, HubSpot meetings embed |
 | https://skipper-co.com/about/ | `/about/` | About page |
 | https://skipper-co.com/privacy-policy/ | `/privacy-policy/` | Privacy Policy |
 | https://skipper-co.com/terms/ | `/terms/` | Terms of Service |
-| https://skipper-co.com/hello-world/ | `/hello-world/` | Default WordPress post. The live theme returns 200 with an empty body; this route serves the published post text. |
-| https://skipper-co.com/category/uncategorized/ | `/category/uncategorized/` | Category archive. The live theme body is empty; this route lists the only post in that category. |
-| https://skipper-co.com/author/gscheepersb2b-launch-co-za/ | `/author/gscheepersb2b-launch-co-za/` | Author archive for the WordPress display name `gscheepers@b2b-launch.co.za`. The live theme body is empty; this route lists that author’s post. |
+| https://skipper-co.com/hello-world/ | `/` | 301. Default WordPress post, not a content page. |
+| https://skipper-co.com/category/uncategorized/ | `/` | 301. Empty category archive. |
+| https://skipper-co.com/author/gscheepersb2b-launch-co-za/ | `/` | 301. Empty author archive. |
 
-There is no separate service URL. The audit is the homepage.
+There is no separate service URL. The three services published on the About page (sales funnel audits, CRM and sales automation, conversion and tracking) are also a section on the homepage. The audit detail stays on the homepage.
 
 WordPress shortlinks redirect to those routes:
 
@@ -62,9 +62,11 @@ WordPress shortlinks redirect to those routes:
 | `/?p=36` and `/index.php?p=36` | `/about/` |
 | `/?p=3` and `/index.php?p=3` | `/privacy-policy/` |
 | `/?p=34` and `/index.php?p=34` | `/terms/` |
-| `/?p=1` and `/index.php?p=1` | `/hello-world/` |
+| `/?p=1` and `/index.php?p=1` | `/` (301) |
 
 Also redirected: `/index.php`, post and archive feeds, `/wp-sitemap.xml`, and `/wp-sitemap-*.xml` (to `/sitemap.xml`).
+
+`/sitemap.xml` lists the four content routes. `/robots.txt` allows crawling and points at that sitemap. Each content page sets a title, description, canonical URL, and Open Graph and Twitter card tags.
 
 ## Analytics events
 

@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { wordpressPostIds } from "./src/config/routes";
+import { retiredPaths, wordpressPostIds } from "./src/config/routes";
 
 const wordpressShortlinks = Object.entries(wordpressPostIds)
   .filter(([, destination]) => destination !== "/")
@@ -27,24 +27,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...wordpressShortlinks,
+      ...retiredPaths.map((source) => ({
+        source,
+        destination: "/",
+        statusCode: 301 as const,
+      })),
       { source: "/index.php", destination: "/", permanent: true },
       { source: "/feed", destination: "/", permanent: true },
       { source: "/comments/feed", destination: "/", permanent: true },
-      {
-        source: "/hello-world/feed",
-        destination: "/hello-world/",
-        permanent: true,
-      },
-      {
-        source: "/category/uncategorized/feed",
-        destination: "/category/uncategorized/",
-        permanent: true,
-      },
-      {
-        source: "/author/gscheepersb2b-launch-co-za/feed",
-        destination: "/author/gscheepersb2b-launch-co-za/",
-        permanent: true,
-      },
       { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       {
         source: "/wp-sitemap-:name.xml",

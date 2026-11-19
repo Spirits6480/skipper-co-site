@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
 import { RichHtml } from "@/components/rich-html";
 import { html } from "@/content/terms-html";
+import { publicRoutes } from "@/config/routes";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Terms of Service",
-};
+const terms = publicRoutes[3];
+
+export const metadata = pageMetadata({
+  title: terms.title,
+  description: terms.description,
+  path: terms.path,
+});
 
 export default function TermsPage() {
   return (

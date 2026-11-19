@@ -17,7 +17,8 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.pathname = destination;
   url.searchParams.delete("p");
-  return NextResponse.redirect(url, 308);
+  const status = id === "1" ? 301 : 308;
+  return NextResponse.redirect(url, status);
 }
 
 export const config = {

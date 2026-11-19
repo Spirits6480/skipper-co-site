@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
 import { RichHtml } from "@/components/rich-html";
 import { html } from "@/content/privacy-html";
+import { publicRoutes } from "@/config/routes";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-};
+const privacy = publicRoutes[2];
+
+export const metadata = pageMetadata({
+  title: privacy.title,
+  description: privacy.description,
+  path: privacy.path,
+});
 
 export default function PrivacyPolicyPage() {
   return (

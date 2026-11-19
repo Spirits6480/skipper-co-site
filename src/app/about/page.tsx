@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
 import { RichHtml } from "@/components/rich-html";
 import { html } from "@/content/about-html";
+import { publicRoutes } from "@/config/routes";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About",
-};
+const about = publicRoutes[1];
+
+export const metadata = pageMetadata({
+  title: about.title,
+  description: about.description,
+  path: about.path,
+});
 
 export default function AboutPage() {
   return (
